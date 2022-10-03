@@ -56,7 +56,6 @@ app.get('/clean/seed', (req, res) => {
     	});
      });
     
-
 //connection events
 mongoose.connection
     .on("open", () => console.log("You are connected to mongoose"))
