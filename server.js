@@ -45,9 +45,9 @@ mongoose.connect(MONGODB_URL, {
 ////////////
 
 /// CREATE TEST ROUTE ///////
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
+// app.get("/", (req, res) => {
+//     res.send("hello world");
+// });
 
 /////// CLEAN seed route (if need)////////
 app.get('/clean/seed', (req, res) => {
