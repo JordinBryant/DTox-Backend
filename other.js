@@ -141,38 +141,38 @@ module.exports=
         ]
     },
     {
-        "chemical": "Bisphenol (BPA) ",
-        "description": "Exposure to BPA is a concern because of the possible health effects on the brain and prostate gland of fetuses, infants and children. It can also affect children's behavior. ",
-        "products": [
+        chemical: "Bisphenol (BPA) ",
+        description: "Exposure to BPA is a concern because of the possible health effects on the brain and prostate gland of fetuses, infants and children. It can also affect children's behavior. ",
+        products: [
             {
-                "name": "Tampax Tampons",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWzoQWeQKbfLnxzPdUNZiTwfjlVPOpp5Lo1penuFKWTp5mDr5yI4ONRynZ6YjY1NlmhA8&usqp=CAU"
+                name: "Tampax Tampons",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWzoQWeQKbfLnxzPdUNZiTwfjlVPOpp5Lo1penuFKWTp5mDr5yI4ONRynZ6YjY1NlmhA8&usqp=CAU"
             },
             {
-                "name": "Lens Crafters Glasses",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwVWj7cuRvtWuHUM6ORuCwbMPMZGWI5KK5iw&usqp=CAU"
+                name: "Lens Crafters Glasses",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwVWj7cuRvtWuHUM6ORuCwbMPMZGWI5KK5iw&usqp=CAU"
             },
             {
-                "name": "Dr.Browns Baby Bottles",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTie8rSbQLG3NvOv7e41a5o11Pv2rT5e0zaiw&usqp=CAU"
+                name: "Dr.Browns Baby Bottles",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTie8rSbQLG3NvOv7e41a5o11Pv2rT5e0zaiw&usqp=CAU"
             }
         ]
     },
     {
-        "chemical": "Triclosan",
-        "description": "Triclosan is an ingredient that helps prevent or reduce bacterial contamination. Short-term studies show links to a decrease in thyroid hormones",
-        "products": [
+        chemical: "Triclosan",
+        description: "Triclosan is an ingredient that helps prevent or reduce bacterial contamination. Short-term studies show links to a decrease in thyroid hormones",
+        products: [
             {
-                "name": "Dial Body Wash",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlXoQS22oKt9W92mWmvZcao0ziF4N11WsoXcnCh-1Qig-Ssh4jrWZpSsWVm9CiNyB4wW8&usqp=CAU"
+                name: "Dial Body Wash",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlXoQS22oKt9W92mWmvZcao0ziF4N11WsoXcnCh-1Qig-Ssh4jrWZpSsWVm9CiNyB4wW8&usqp=CAU"
             },
             {
-                "name": "Dawn Dishwashing Liquid",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGRa--sAek3zsHf4ooyNb7Xh8eCvDgbOwTnA&usqp=CAU"
+                name: "Dawn Dishwashing Liquid",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGRa--sAek3zsHf4ooyNb7Xh8eCvDgbOwTnA&usqp=CAU"
             },
             {
-                "name": "Bath & Body Works hand soap",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg22m9IuydvOtSQ2mXtoxR905y-LaQ4q2prA&usqp=CAU"
+                name: "Bath & Body Works hand soap",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg22m9IuydvOtSQ2mXtoxR905y-LaQ4q2prA&usqp=CAU"
             }
         ]
     }
