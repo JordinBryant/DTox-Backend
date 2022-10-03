@@ -6,6 +6,6 @@ const otherAltSchema = new mongoose.Schema({
     img: String
 })
 
-const AltOther = mongoose.model("AltClean", otherAltSchema)
+const AltOther = mongoose.model("AltOther", otherAltSchema)
 
 module.exports=AltOther
