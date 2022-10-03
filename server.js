@@ -9,7 +9,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
 const mongoose = require("mongoose");
-const { on } = require("nodemon");
 
 ////////import data files
 const cleanSeed = require("./clean")
