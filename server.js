@@ -12,6 +12,7 @@ const mongoose = require("mongoose");
 const { on } = require("nodemon");
 const cleanSeed = require("./clean")
 const foodSeed = require("./food")
+const otherSeed = require("./other")
 const Clean = require("./Models/clean")
 const Other = require("./Models/other")
 const Food = require("./Models/food")
@@ -104,7 +105,7 @@ app.get("/other", async (req, res) => {
     }
 })
 
-    
+  
 //connection events
 mongoose.connection
     .on("open", () => console.log("You are connected to mongoose"))
