@@ -10,6 +10,9 @@ const morgan = require("morgan");
 const app = express();
 const mongoose = require("mongoose");
 const { on } = require("nodemon");
+const cleanSeed = require("./clean")
+const Clean = require("./Models/clean")
+
 
 /////////////////
 // MIDDLEWARE //
@@ -28,12 +31,38 @@ mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
 });
 
+//////////////
+// ROUTES ///
+////////////
+
+
+// CLEAN INDEX ROUTE
+app.get("/clean", async (req, res) => {
+    try {
+        // send all cleaningProducts
+        res.json(await Clean.find({}));
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+});
+
+// Clean seed route (if need)
+app.get('/clean/seed', (req, res) => {
+    	Clean.deleteMany({}, (error, allClean) => {}); //used to delete multiple of the same items
+    
+    	Clean.create(cleanSeed, (error, data) => {
+    		res.redirect('/clean');
+    	});
+     });
+    
+
 //connection events
 mongoose.connection
     .on("open", () => console.log("You are connected to mongoose"))
     .on("close", () => console.log("You are disconnected from mongoose"))
     .on("error", (error) => console.log(error));
-    
+
 ///////////////
 // LISTENER //
 /////////////
