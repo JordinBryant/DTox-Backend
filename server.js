@@ -44,10 +44,10 @@ mongoose.connect(MONGODB_URL, {
 // ROUTES ///
 ////////////
 
-/// CREATE TEST ROUTE ///////
-// app.get("/", (req, res) => {
-//     res.send("hello world");
-// });
+// CREATE TEST ROUTE ///////
+app.get("/", (req, res) => {
+    res.send("hello world");
+});
 
 /////// CLEAN seed route (if need)////////
 app.get('/clean/seed', (req, res) => {
