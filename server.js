@@ -12,6 +12,8 @@ const mongoose = require("mongoose");
 const { on } = require("nodemon");
 const cleanSeed = require("./clean")
 const Clean = require("./Models/clean")
+const Other = require("./Models/other")
+const Food = require("./Models/food")
 
 
 /////////////////
