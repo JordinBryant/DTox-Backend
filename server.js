@@ -11,15 +11,13 @@ const app = express();
 const mongoose = require("mongoose");
 
 ////////import data files
-const cleanSeed = require("./clean")
 const foodSeed = require("./food")
 const otherSeed = require("./other")
-const Clean = require("./Models/clean")
 const Other = require("./Models/other")
 const Food = require("./Models/food")
-const AltClean = require("./Models/cleanAlt")
 const AltFood = require("./Models/foodAlt");
 const AltOther = require("./Models/otherAlt");
+const  cleanController = require("./Controllers/cleanRoutes")
 
 
 /////////////////
@@ -29,6 +27,7 @@ const AltOther = require("./Models/otherAlt");
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+app.use("/clean", cleanController)
 
 //////////////////////////
 //  MONGOOSE CONNECTION /
@@ -48,14 +47,7 @@ app.get("/", (req, res) => {
     res.send("hello world");
 });
 
-/////// CLEAN seed route (if need)////////
-app.get('/clean/seed', (req, res) => {
-    Clean.deleteMany({}, (error, allClean) => { }); //used to delete multiple of the same items
 
-    Clean.create(cleanSeed, (error, data) => {
-        res.redirect('/clean');
-    });
-});
 
 /////// FOOD seed route (if need)////////
 app.get('/food/seed', (req, res) => {
@@ -75,17 +67,6 @@ app.get('/other/seed', (req, res) => {
     });
 });
 
-
-///// CLEAN INDEX ROUTE ///////
-app.get("/clean", async (req, res) => {
-    try {
-        // send all cleaning Products
-        res.json(await Clean.find({}));
-    } catch (error) {
-        //send error
-        res.status(400).json(error);
-    }
-});
 
 ///// FOOD INDEX ROUTE //////
 app.get("/food", async (req, res) => {
@@ -138,9 +119,6 @@ app.get("/altother", async (req, res) => {
     }
 })
 
-/////// ALT NEW ROUTES ///////////////
-////////// ALT DELETE ROUTES /////////////
-////////// ALT UPDATE ROUTES ////////////////
 /////// ALT CREATE ROUTES ///////////
 
 //Clean//
@@ -170,7 +148,6 @@ app.post("/altother", async (req, res) => {
     }
 });
 
-//////////// ALT SHOW ROUTES //////////////
 
 //connection events
 mongoose.connection
