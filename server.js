@@ -16,6 +16,7 @@ const AltOther = require("./Models/otherAlt");
 const cleanController = require("./Controllers/cleanRoutes")
 const foodController = require ("./Controllers/foodRoutes")
 const otherController = require ("./Controllers/otherRoutes")
+const altCleanController = require("./Controllers/altClean")
 
 
 /////////////////
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use("/clean", cleanController)
 app.use("/food", foodController)
 app.use("/other", otherController)
+app.use("/altclean", altCleanController)
 
 //////////////////////////
 //  MONGOOSE CONNECTION /
@@ -50,15 +52,6 @@ app.get("/", (req, res) => {
 
 ///////// ALT INDEX ROUTES //////////////
 
-//Clean//
-app.get("/altclean", async (req, res) => {
-    try {
-        res.json(await AltClean.find({}));
-    } catch (error) {
-        res.status(400).json(error);
-    }
-})
-
 //Food//
 app.get("/altfood", async (req, res) => {
     try {
@@ -78,15 +71,6 @@ app.get("/altother", async (req, res) => {
 })
 
 /////// ALT CREATE ROUTES ///////////
-
-//Clean//
-app.post("/altclean", async (req, res) => {
-    try {
-        res.json(await AltClean.create(req.body));
-    } catch (error) {
-        res.status(400).json(error)
-    }
-});
 
 //Food//
 app.post("/altfood", async (req, res) => {
