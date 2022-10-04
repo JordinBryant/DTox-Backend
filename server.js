@@ -11,12 +11,11 @@ const app = express();
 const mongoose = require("mongoose");
 
 ////////import data files
-const otherSeed = require("./other")
-const Other = require("./Models/other")
 const AltFood = require("./Models/foodAlt");
 const AltOther = require("./Models/otherAlt");
 const cleanController = require("./Controllers/cleanRoutes")
 const foodController = require ("./Controllers/foodRoutes")
+const otherController = require ("./Controllers/otherRoutes")
 
 
 /////////////////
@@ -28,6 +27,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use("/clean", cleanController)
 app.use("/food", foodController)
+app.use("/other", otherController)
 
 //////////////////////////
 //  MONGOOSE CONNECTION /
@@ -47,30 +47,6 @@ app.get("/", (req, res) => {
     res.send("hello world");
 });
 
-
-
-
-/////// OTHER seed route (if need)////////
-app.get('/other/seed', (req, res) => {
-    Other.deleteMany({}, (error, allOther) => { }); //used to delete multiple of the same items
-
-    Other.create(otherSeed, (error, data) => {
-        res.redirect('/other');
-    });
-});
-
-
-
-///// OTHER INDEX ROUTE //////
-app.get("/other", async (req, res) => {
-    try {
-        // send all food Products
-        res.json(await Other.find({}));
-    } catch (error) {
-        //send error
-        res.status(400).json(error);
-    }
-})
 
 ///////// ALT INDEX ROUTES //////////////
 
