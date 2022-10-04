@@ -26,11 +26,30 @@ altFoodRouter.get("/", async (req, res) => {
         res.status(400).json(error);
     }
 })
-// New
 
 // Delete
+altFoodRouter.delete("/:id", async (req, res) => {
+    try {
+        //send all people
+        res.json(await AltFood.findByIdAndRemove(req.params.id));
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+});
 
 // Update
+altFoodRouter.put("/:id", async (req, res) => {
+    try{
+        //send all people
+        req.json(
+            await AltFood.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        );
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+})
 
 // Create
 altFoodRouter.post("/", async (req, res) => {
@@ -40,9 +59,5 @@ altFoodRouter.post("/", async (req, res) => {
         res.status(400).json(error)
     }
 });
-
-// Edit 
-
-// Show
 
 module.exports = altFoodRouter

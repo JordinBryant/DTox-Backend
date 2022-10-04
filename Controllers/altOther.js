@@ -26,11 +26,30 @@ altOtherRouter.get("/", async (req, res) => {
         res.status(400).json(error);
     }
 })
-// New
 
 // Delete
+altOtherRouter.delete("/:id", async (req, res) => {
+    try {
+        //send all people
+        res.json(await AltOther.findByIdAndRemove(req.params.id));
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+});
 
 // Update
+altOtherRouter.put("/:id", async (req, res) => {
+    try{
+        //send all people
+        req.json(
+            await AltOther.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        );
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+})
 
 // Create
 altOtherRouter.post("/", async (req, res) => {
@@ -40,9 +59,5 @@ altOtherRouter.post("/", async (req, res) => {
         res.status(400).json(error)
     }
 });
-
-// Edit 
-
-// Show
 
 module.exports = altOtherRouter
