@@ -6,7 +6,6 @@ const express = require("express");
 const cleanRouter = express.Router();
 const cors = require("cors");
 const morgan = require("morgan");
-const app = express();
 
 ////////import data files
 const cleanSeed = require("../clean")
@@ -16,9 +15,9 @@ const Clean = require("../Models/clean")
 // MIDDLEWARE //
 ///////////////
 
-app.use(cors());
-app.use(morgan("dev"));
-app.use(express.json());
+cleanRouter.use(cors());
+cleanRouter.use(morgan("dev"));
+cleanRouter.use(express.json());
 
 /////// CLEAN seed route (if need)////////
 // cleanRouter.get('/clean/seed', (req, res) => {
