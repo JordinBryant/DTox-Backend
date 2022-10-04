@@ -18,7 +18,7 @@ const foodController = require ("./Controllers/foodRoutes")
 const otherController = require ("./Controllers/otherRoutes")
 const altCleanController = require("./Controllers/altClean")
 const altFoodController = require("./Controllers/altFood")
-
+const altOtherController = require("./Controllers/altOther")
 
 /////////////////
 // MIDDLEWARE //
@@ -32,6 +32,7 @@ app.use("/food", foodController)
 app.use("/other", otherController)
 app.use("/altclean", altCleanController)
 app.use("/altfood", altFoodController)
+app.use("/altother", altOtherController)
 
 //////////////////////////
 //  MONGOOSE CONNECTION /
@@ -50,32 +51,6 @@ mongoose.connect(MONGODB_URL, {
 app.get("/", (req, res) => {
     res.send("hello world");
 });
-
-
-///////// ALT INDEX ROUTES //////////////
-
-
-//Other//
-app.get("/altother", async (req, res) => {
-    try {
-        res.json(await AltOther.find({}));
-    } catch (error) {
-        res.status(400).json(error);
-    }
-})
-
-/////// ALT CREATE ROUTES ///////////
-
-
-//Other//
-app.post("/altother", async (req, res) => {
-    try {
-        res.json(await AltOther.create(req.body));
-    } catch (error) {
-        res.status(400).json(error)
-    }
-});
-
 
 //connection events
 mongoose.connection
