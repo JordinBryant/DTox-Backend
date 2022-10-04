@@ -26,11 +26,30 @@ altCleanRouter.get("/", async (req, res) => {
         res.status(400).json(error);
     }
 })
-// New
 
 // Delete
+altCleanRouter.delete("/:id", async (req, res) => {
+    try {
+        //send all people
+        res.json(await AltClean.findByIdAndRemove(req.params.id));
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+});
 
 // Update
+altCleanRouter.put("/:id", async (req, res) => {
+    try{
+        //send all people
+        req.json(
+            await AltClean.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        );
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+})
 
 // Create
 altCleanRouter.post("/", async (req, res) => {
@@ -40,9 +59,5 @@ altCleanRouter.post("/", async (req, res) => {
         res.status(400).json(error)
     }
 });
-
-// Edit 
-
-// Show
 
 module.exports = altCleanRouter
