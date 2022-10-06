@@ -30,7 +30,6 @@ altCleanRouter.get("/", async (req, res) => {
 // Delete
 altCleanRouter.delete("/:id", async (req, res) => {
     try {
-        //send all people
         res.json(await AltClean.findByIdAndRemove(req.params.id));
     } catch (error) {
         //send error
@@ -41,7 +40,6 @@ altCleanRouter.delete("/:id", async (req, res) => {
 // Update
 altCleanRouter.put("/:id", async (req, res) => {
     try{
-        //send all people
         req.json(
             await AltClean.findByIdAndUpdate(req.params.id, req.body, { new: true })
         );

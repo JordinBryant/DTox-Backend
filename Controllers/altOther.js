@@ -30,7 +30,7 @@ altOtherRouter.get("/", async (req, res) => {
 // Delete
 altOtherRouter.delete("/:id", async (req, res) => {
     try {
-        //send all people
+
         res.json(await AltOther.findByIdAndRemove(req.params.id));
     } catch (error) {
         //send error
@@ -41,7 +41,6 @@ altOtherRouter.delete("/:id", async (req, res) => {
 // Update
 altOtherRouter.put("/:id", async (req, res) => {
     try{
-        //send all people
         req.json(
             await AltOther.findByIdAndUpdate(req.params.id, req.body, { new: true })
         );
