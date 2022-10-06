@@ -31,7 +31,7 @@ otherRouter.use(express.json());
 ///// OTHER INDEX ROUTE //////
 otherRouter.get("/", async (req, res) => {
     try {
-        // send all food Products
+        // send all other Products
         res.json(await other.find({}));
     } catch (error) {
         //send error

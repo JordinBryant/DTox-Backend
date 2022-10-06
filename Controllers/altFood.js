@@ -30,7 +30,6 @@ altFoodRouter.get("/", async (req, res) => {
 // Delete
 altFoodRouter.delete("/:id", async (req, res) => {
     try {
-        //send all people
         res.json(await AltFood.findByIdAndRemove(req.params.id));
     } catch (error) {
         //send error
@@ -41,7 +40,6 @@ altFoodRouter.delete("/:id", async (req, res) => {
 // Update
 altFoodRouter.put("/:id", async (req, res) => {
     try{
-        //send all people
         req.json(
             await AltFood.findByIdAndUpdate(req.params.id, req.body, { new: true })
         );

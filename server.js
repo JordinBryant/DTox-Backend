@@ -11,8 +11,6 @@ const app = express();
 const mongoose = require("mongoose");
 
 ////////import data files
-const AltFood = require("./Models/foodAlt");
-const AltOther = require("./Models/otherAlt");
 const cleanController = require("./Controllers/cleanRoutes")
 const foodController = require ("./Controllers/foodRoutes")
 const otherController = require ("./Controllers/otherRoutes")
