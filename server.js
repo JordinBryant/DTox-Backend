@@ -36,7 +36,7 @@ app.use("/altother", altOtherController)
 //  MONGOOSE CONNECTION /
 ////////////////////////
 
-mongoose.connect(MONGODB_URL, {
+mongoose.connect("mongodb+srv://admin:abc1234@cluster0.detkf0t.mongodb.net/dtox?retryWrites=true&w=majority", {
     useUnifiedTopology: true,
     useNewUrlParser: true,
 });
